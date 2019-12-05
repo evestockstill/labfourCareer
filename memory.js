@@ -4,53 +4,53 @@ const uuid = require('uuid/v4');
 
 class Model {
 
-    constructor() {
-        this.database = [];
-    }
+  constructor() {
+    this.database = [];
+  }
 
-    get(id) {
-        let response = id ? this.database.filter((record) => record.id === id) : this.database;
-        return Promise.resolve(response);
-    }
+  get(id) {
+    let response = id ? this.database.filter((record) => record.id === id) : this.database;
+    return Promise.resolve(response);
+  }
 
-    create(entry) {
-        entry.id = uuid();
-        let record = this.sanitize(entry);
-        if(record.id) { this.database.push(record); }
-        return Promise.resolve(record);
-    }
+  create(entry) {
+    entry.id = uuid();
+    let record = this.sanitize(entry);
+    if(record.id) { this.database.push(record); }
+    return Promise.resolve(record);
+  }
 
-    update(id, entry) {
-        let record = this.sanitize(entry);
-        if(record.id) { this.database = this.database.map((item) => (item.id === id) ? record : item); }
-        return Promise.resolve(record);
-    }
+  update(id, entry) {
+    let record = this.sanitize(entry);
+    if(record.id) { this.database = this.database.map((item) => (item.id === id) ? record : item); }
+    return Promise.resolve(record);
+  }
 
-    delete(id) {
-        this.database = this.database.filter((record) => record.id !== id);
-        return Promise.resolve();
-    }
+  delete(id) {
+    this.database = this.database.filter((record) => record.id !== id);
+    return Promise.resolve();
+  }
 
-    sanitize(entry) {
+  sanitize(entry) {
 
-        let valid = true;
-        let record = {};
+    let valid = true;
+    let record = {};
 
-        Object.keys(this.schema).forEach(field => {
-            if(this.schema[field].required) {
-                if(entry[field]) {
-                    record[field] = entry[field];
-                } else {
-                    valid = false;
-                }
-            }
-            else {
-                record[field] = entry[field];
-            }
-        });
+    Object.keys(this.schema).forEach(field => {
+      if(this.schema[field].required) {
+        if(entry[field]) {
+          record[field] = entry[field];
+        } else {
+          valid = false;
+        }
+      }
+      else {
+        record[field] = entry[field];
+      }
+    });
 
-        return valid ? record : undefined;
-    }
+    return valid ? record : undefined;
+  }
 
 }
 

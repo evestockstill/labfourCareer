@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const Categories = require('../categories/categories.js');
 
 describe('Categories Model', () => {
@@ -6,14 +7,14 @@ describe('Categories Model', () => {
 
   beforeEach(() => {
     categories = new Categories();
-  })
+  });
 
   // How might we repeat this to check on types?
   it('sanitize() returns undefined with missing requirements', () => {
     const schema = categories.schema;
     var testRecord = {};
-    for (var field in schema) {
-      if (schema[field].required) {
+    for(var field in schema) {
+      if(schema[field].required) {
         testRecord[field] = null;
       }
     }
