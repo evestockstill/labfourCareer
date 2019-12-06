@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
-    "test-watch": "jest --watchAll --verbose",
-    "lint":"eslint **/*.js"
-
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evestockstill/labfourCareer.git"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +27,8 @@
     "eslint": "^6.7.2",
     "jest": "^24.9.0",
     "uuid": "^3.3.3"
+  },
+  "dependencies": {
+    "mongoose": "^5.7.13"
   }
 }
