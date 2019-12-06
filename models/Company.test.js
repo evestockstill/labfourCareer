@@ -4,8 +4,8 @@ describe('Company Model', () => {
   describe('name', () => {
     it('requires a name', () => {
       const company = new Comapany({
-       phone: '503-777-7777',
-       website: true
+        phone: '503-777-7777',
+        website: true
       });
       const { errors } = company.validateSync();
       expect(errors.name.message).toEqual('Path `name` is required.');
@@ -21,7 +21,7 @@ describe('Company Model', () => {
         
       });
       const { errors } = company.validateSync();
-      expect(errors.phone.message).toEqual('Path `phone` (`503-777-7777-777777777`) is longer than the maximum allowed length(20).');
+      expect(errors.phone.message).toEqual('Path `phone` (`503-777-7777-777777777`) is longer than the maximum allowed length (20).');
     });
   });
 
