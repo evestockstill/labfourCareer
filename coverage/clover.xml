@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1575603753183" clover="3.2.0">
-  <project timestamp="1575603753184" name="All files">
+<coverage generated="1575604933202" clover="3.2.0">
+  <project timestamp="1575604933202" name="All files">
     <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="12" coveredelements="12" complexity="0" loc="12" ncloc="12" packages="1" files="4" classes="4"/>
     <file name="Bar.js" path="/Users/evestockstill/careerTrack/labfourCareer/models/Bar.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -16,9 +16,9 @@
     </file>
     <file name="Company.js" path="/Users/evestockstill/careerTrack/labfourCareer/models/Company.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
     </file>
     <file name="People.js" path="/Users/evestockstill/careerTrack/labfourCareer/models/People.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

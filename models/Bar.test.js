@@ -38,6 +38,10 @@ describe('Bar Model', () => {
       const { errors } = bar.validateSync();
       expect(errors.age.message).toEqual('Path `age` (20) is less than minimum allowed value (21).');
     });
+    it('should be greater than or equal to 21', () => {
+      const age = 21;
+      expect(age).toBeGreaterThanOrEqual(21);
+    });
   });
   describe('average bar rating', () => {
     it('requires a rating lower than 11', () => {

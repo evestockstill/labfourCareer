@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const Comapany = require('./Company');
 
 describe('Company Model', () => {
@@ -34,6 +35,9 @@ describe('Company Model', () => {
       });
       const { errors } = company.validateSync();
       expect(errors.website.message).toEqual('Path `website` is invalid (htppalchemy@websitecom).');
+    });
+    it('is a valid website', ()=> {
+      expect('http://www.google.com').toMatch('http://www.google.com');
     });
   });
 });
